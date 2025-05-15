@@ -5,7 +5,7 @@ import { Image, StyleSheet, View } from 'react-native';
 
 const SplashScreen = () => {
     const router = useRouter();
-    const { theme } = useTheme();
+    const { theme, isDarkMode } = useTheme();
     
     // Se quiser reativar o redirecionamento automático, basta descomentar:
     // useEffect(() => {
@@ -22,7 +22,7 @@ const SplashScreen = () => {
             <Image 
                 resizeMode="contain" 
                 style={styles.logo} 
-                source={require('../assets/images/splashImage.png')} 
+                source={ isDarkMode ? require('../assets/images/splashImageEscuro.png') : require('../assets/images/splashImage.png')} 
             />
         </View>
     );

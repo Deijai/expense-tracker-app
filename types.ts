@@ -1,3 +1,4 @@
+import { Router } from "expo-router";
 import { Timestamp } from "firebase/firestore";
 import { Icon } from "phosphor-react-native";
 import React, { ReactNode } from "react";
@@ -166,3 +167,9 @@ export type WalletType = {
   uid?: string;
   created?: Date;
 };
+
+export type WalletListItemProps = {
+  item: WalletType;
+  index: number;
+  router: Router
+}
